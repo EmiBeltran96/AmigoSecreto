@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Amigo secreto</title>
+</head>
+
+
+<body>
+    <main class="main">
+        <!--TITULO E IMAGEN DEL HEADER-->
+        <header class=" header">
+            <h1 class="header__titulo">Amigo secreto</h1>
+            <img class="imagen__principal" src="assets/amigo-secreto.png" alt="Imagen del amigo secreto" >
+        </header>
+        <!--SECCION-->
+        <section class="section">
+            <h2 class="section__titulo">Digite el nombre se sus amigos</h2>
+            <!--SECCION PARA AGREGAR NOMBRES-->
+            <div class="boton__input">
+                <input type="text" id="nombreAmigo" class="input__nombre" placeholder="Ingrese un nombre">
+                <button class="boton__añadir" onclick=" agregarAmigo()">Añadir</button>
+            </div>
+            <!--SECCION PARA MOSTRAR LISTA DE NOMBRES INGRESADOS-->
+            <div>
+                <h3 id="tituloListaAmigos" class="list-title ocultar">Lista de Amigos Ingresados</h3>
+                <ul id="listaAmigos" class="lista__nombre" aria-labelledby="listaAmigos" role="list"></ul>
+            </div>
+            <!--SECCION PARA REALIZAR EL SORTEO-->
+            <div class="sorteo">
+                <button class="boton__sorteo" onclick= sortearAmigos() aria-label="Sortear amigo secreto">
+                    <img src="assets/play_circle_outline.png" alt="Icono de sorteo">Sortear Amigo
+                </button>
+            </div>
+            <!--SECCION PARA VER NOMBRE DEL GANADOR-->
+            <div>
+                <h3 id="tituloResultado" class="list-title ocultar">Su amigo secreto es:</h3>
+                <ul id="resultado" class="lista__resultado" aria-live="polite"></ul>
+                
+            </div>
+            <!--SECCION PARA REINICIAR EL JUEGO-->
+            <div class="reiniciar">
+                <button id="boton__reiniciar" class="boton__reiniciar" onclick= reiniciarJuego() disabled>
+                <img src="assets/klipartz.com.png"> Reiniciar Juego</button>
+            </div>
+            
+        </section>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+</html>
